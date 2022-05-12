@@ -5,15 +5,16 @@ using namespace std;
 // O(n-1) OR O(m-1)
 int unique_grid_paths_optimized(int n, int m)
 {
-    int N = n + m - 2;
-    int r = n - 1;
-    double res = 1;
-
-    for (int i = 1; i <= r; i++)
+    int N = n - 1 + m - 1;
+    int r = (n < m) ? n - 1 : m - 1;
+    long res = 1;
+    long j = 1;
+    for (long i = N; i > N - r; i--, j++)
     {
-        res *= (N - r + i) / i;
+        res *= i;
+        res /= j;
     }
-    return (int)res;
+    return res;
 }
 
 // DP Approach - O(n*m)
