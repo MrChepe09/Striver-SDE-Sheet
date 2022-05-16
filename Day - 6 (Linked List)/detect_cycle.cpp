@@ -21,14 +21,12 @@ bool detect_cycle(Node *head)
     Node *fast = head;
     Node *slow = head;
 
-    while (fast && fast->next)
+    while (fast->next && fast->next->next)
     {
         fast = fast->next->next;
         slow = slow->next;
         if (fast == slow)
-        {
             return true;
-        }
     }
     return false;
 }

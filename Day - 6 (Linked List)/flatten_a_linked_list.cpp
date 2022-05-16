@@ -46,7 +46,7 @@ Node *mergeTwoLists(Node *a, Node *b)
 
 Node *flatten_list(Node *head)
 {
-    if (head || head->next)
+    if (head == NULL || head->next == NULL)
         return head;
 
     head->next = flatten_list(head->next);
@@ -79,7 +79,7 @@ void printOriginal(Node *head)
     {
         cout << temp->val << " -> ";
         Node *bot = temp->bottom;
-        while (bot)
+        while (bot != NULL)
         {
             cout << bot->val << " -> ";
             bot = bot->bottom;
