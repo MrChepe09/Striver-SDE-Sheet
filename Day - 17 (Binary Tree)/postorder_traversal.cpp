@@ -42,7 +42,6 @@ void postorder_iterative(Node *root, vector<int> &traversal)
             s.push(curr->right);
         }
     }
-    cout << "hello" << endl;
     reverse(traversal.begin(), traversal.end());
 }
 

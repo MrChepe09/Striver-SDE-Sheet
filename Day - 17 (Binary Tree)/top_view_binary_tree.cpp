@@ -20,7 +20,7 @@ Node *newNode(int data)
     return item;
 }
 
-void bottom_recursion(Node *root, vector<int> &bottom)
+void top_recursion(Node *root, vector<int> &top)
 {
     if (root == NULL)
         return;
@@ -50,7 +50,7 @@ void bottom_recursion(Node *root, vector<int> &bottom)
 
     for (auto it : mp)
     {
-        bottom.push_back(it.second);
+        top.push_back(it.second);
     }
 }
 
@@ -67,12 +67,12 @@ int main()
     root->right->right->left = newNode(9);
     root->right->right->right = newNode(10);
 
-    vector<int> bottom;
-    bottom_recursion(root, bottom);
-    cout << "Bottom: ";
-    for (int i = 0; i < bottom.size(); i++)
+    vector<int> top;
+    top_recursion(root, top);
+    cout << "Top: ";
+    for (int i = 0; i < top.size(); i++)
     {
-        cout << bottom[i] << " ";
+        cout << top[i] << " ";
     }
     cout << endl;
 }
